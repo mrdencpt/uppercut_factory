@@ -1,0 +1,36 @@
+
+<!-- ========================= FOOTER ========================= -->
+<footer class="section-footer border-top">
+	<div class="container">
+		<section class="footer-bottom border-top row">
+			<div class="col-md-2">
+				<p class="text-muted"> &copy 2022 UPPERCUT </p>
+			</div>
+			<div class="col-md-10 text-md-right">
+				<span  class="px-2">info@uppercut</span>
+				<span  class="px-2">1112 1669 ..</span>
+				<span  class="px-2">อ้อมใหญ่ สามพราน, นครปฐม</span>
+			</div>
+			<!-- <div class="col-md-2 text-md-right text-muted">
+				<i class="fab fa-lg fa-cc-visa"></i>
+				<i class="fab fa-lg fa-cc-paypal"></i>
+				<i class="fab fa-lg fa-cc-mastercard"></i>
+			</div> -->
+		</section>
+	</div><!-- //container -->
+</footer>
+<!-- ========================= FOOTER END // ========================= -->
+
+<!-- เอา jquery cdn จาก เว็บ https://www.w3schools.com/jquery/jquery_get_started.asp แสดงภาพสินค้าตอนคลิกภาพ-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+	$(document).ready(function(){
+		$('.thumb a').click(function(e){
+			e.preventDefault();
+			$('.mainImage img').attr('src', $(this).attr("href"));
+		})
+	})
+</script>
+
+</body>
+</html>

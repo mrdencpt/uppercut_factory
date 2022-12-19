@@ -1,0 +1,65 @@
+/* ซ่อน radio button */
+.rate > input{
+    display: none;
+}
+
+.rate{
+    display: inline-block;
+    border: 0;
+}
+
+.rate > label{
+    float: right;
+}
+
+/* Showing the stars*/
+.rate > label:before{
+    display: inline-block;
+    font-size: 1.1rem;
+    font-family: Fontawesome;
+    content: "\f005";
+    margin:0;
+    padding:0.3rem .2rem;
+    cursor: pointer;
+}
+
+/* Half star */
+.rate .half:before {
+    content: "\f089";
+    position: absolute;
+    padding-right: 0;
+}
+
+/* Click and hover */
+input:checked ~ label, label:hover ~ label{
+    color: #ffb503;
+}
+
+/* hover hightlight */
+input:checked + label:hover, input:checked ~ label:hover,input:checked ~ label:hover ~ label,
+label:hover ~ input:checked ~ label{
+    color: #cc0022; /*#cc9000 ทองดำ*/
+}
+
+/* ใส่สีให้ดาว โดยตั้งชื้่อ rating-star ให้ class ใน div ก่อน i คือแท็ก i อยู่ที่ product_detail.html*/
+/* ต้อง  hard refresh Chrome, Firefox ด้วย ctrl+F5 ถึ่งจะเห็นสีที่ใส่ไปใหม่*/
+.rating-star i{
+    color: #ffb503;
+}
+
+/*แต่งรูปภาพ gallery หน้า productdetail.html*/
+/*จบนี้แล้ว รันคำสั่ง python manage.py collectstatic แล้ว กด ctrl+F5 โหลดหน้าใหม่*/
+ul.thumb{
+    margin: 0 auto;
+    padding: 0;
+    float: left;
+}
+ul.thumb li{
+    list-style: none;
+    margin: 10px;
+}
+ul.thumb li img{
+    width: 80px;
+    height: 80px;
+    border: 1px solid grey;
+}
