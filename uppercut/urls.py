@@ -19,10 +19,10 @@ from . import views
 from django.conf.urls.static import static
 from django.conf import settings
 urlpatterns = [
+    path('', views.home, name='home'),
     path('admin/', include('admin_honeypot.urls'), name='admin_honeypot'),
     #ทำเก็บคนแอบเข้า admin จบบรรทัดนี้ สั่ง python manage.py migrate จะสร้างตารางเก็บADMIN_HONEYPOT
     path('securelogin/', admin.site.urls), # เข้าadmin
-    path('', views.home, name='home'),
     path('store/', include('store.urls')),
     path('cart/', include('carts.urls')),
     path('accounts/', include('accounts.urls')),

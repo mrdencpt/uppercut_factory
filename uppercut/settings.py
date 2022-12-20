@@ -62,7 +62,8 @@ MIDDLEWARE = [
 # จาก https://pypi.org/project/django-session-timeout/
 SESSION_EXPIRE_SECONDS = 3600  # 1ชม = 3600 วินาที
 SESSION_EXPIRE_AFTER_LAST_ACTIVITY = True
-SESSION_TIMEOUT_REDIRECT = 'accounts/login'
+# SESSION_TIMEOUT_REDIRECT = 'accounts/login'
+SESSION_TIMEOUT_REDIRECT = 'home'
 
 ROOT_URLCONF = 'uppercut.urls'
 
