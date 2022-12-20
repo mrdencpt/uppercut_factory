@@ -248,7 +248,7 @@ def edit_profile(request):
         if user_form.is_valid() and profile_form.is_valid():
             user_form.save()
             profile_form.save()
-            messages.success(request, 'Your profile has been updated.')
+            messages.success(request, 'บันทึกโปรไฟล์ สำเร็จ')
             return redirect('edit_profile')
     else:
         user_form = UserForm(instance=request.user)

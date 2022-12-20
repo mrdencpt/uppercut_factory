@@ -5,7 +5,7 @@ from django.utils.html import format_html
 
 class AccountAdmin(UserAdmin):
     list_display = ('email', 'phone_number', 'first_name', 'last_name', 'username', 'last_login', 'date_joined', 'is_active')
-    list_display_links = ('email', 'first_name', 'last_name')
+    list_display_links = ('email', 'phone_number', 'first_name', 'last_name')
     readonly_fields = ('last_login', 'date_joined')
     ordering = ('-date_joined',)
 
@@ -16,8 +16,10 @@ class AccountAdmin(UserAdmin):
 class UserProfileAdmin(admin.ModelAdmin):
     def thumbnail(self, object):
         return format_html('<img src="{}" width="30" style="border-radius:50%";>'.format(object.profile_picture.url))
+
     thumbnail.short_description = 'Profile Picture'
-    list_display = ('thumbnail', 'user', 'address_line_1', 'address_line_2', 'city', 'state', 'country')
+    list_display = ('thumbnail', 'user', 'address_detail', 'city', 'state', 'country')
+    list_display_links = ('user', 'address_detail')
 
 
 admin.site.register(Account, AccountAdmin)
