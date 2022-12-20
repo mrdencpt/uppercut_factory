@@ -65,7 +65,7 @@ workon ชื่อ
 deactivate
 
 เอาขึ้น server heroku ดัวย git
-เช็ค heroku login
+heroku login
 heroku create สร้าง app อัตโนมัติ
 เว็บไซด์ https://elements.heroku.com/addons/heroku-postgresql
 สร้างdatabase ด้วย 
