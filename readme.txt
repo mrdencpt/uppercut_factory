@@ -116,3 +116,6 @@ python manage.py dumpdata accounts > dumps/accounts.json
 
 สู่ขั้นตอน up heroku หลังจาก heroku login แล้ว
 heroku run python manage.py loaddata dumps/accounts.json
+
+# รวมรวม ไฟล์ค่าคงที่ ด้วยคำสั่ง
+# python manage.py collectstatic
