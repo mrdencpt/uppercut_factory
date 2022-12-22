@@ -18,7 +18,7 @@ class UserProfileAdmin(admin.ModelAdmin):
         return format_html('<img src="{}" width="30" style="border-radius:50%";>'.format(object.profile_picture.url))
 
     thumbnail.short_description = 'Profile Picture'
-    list_display = ('thumbnail', 'user', 'address_detail', 'city', 'state', 'country')
+    list_display = ('thumbnail', 'profile_picture', 'user', 'address_detail', 'city', 'state', 'country')
     list_display_links = ('thumbnail', 'user', 'address_detail')
 
 

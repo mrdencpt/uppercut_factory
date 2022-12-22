@@ -99,8 +99,11 @@ git commit -m "producttion" ใส่คำอธิบาย git ครั้�
 heroku git:remote -a ชื่อแอ็พ (เส้นทางไป master)
 
 git push heroku master
-มี Error เปลี่ยนเป็น  
+ถ้ามี git pull... before push again ใช้ตัวล่าง
+****git push -f heroku master *****
+master มี Error เปลี่ยนเป็น  
 git push heroku main แทน
+
 
 ใส่รหัส ถ้าไม่ได้ลองเปลี่ยน ' "
 heroku config:set SECRET_KEY='7dszp%!%ae+f#!c6i07'
@@ -119,3 +122,9 @@ heroku run python manage.py loaddata dumps/accounts.json
 
 # รวมรวม ไฟล์ค่าคงที่ ด้วยคำสั่ง
 # python manage.py collectstatic
+
+-- คำสั่งเข้าถึง ไฟล์ข้อมูล heroku app ---
+heroku run bash -a uppercuttest เข้า
+cd .. ออกจากชั้น directory
+cd / ออกจาก directory ทั้งหมด
+exit ตอนจบ

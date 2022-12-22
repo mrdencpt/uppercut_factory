@@ -1,4 +1,5 @@
 <aside class="col-md-3">
+    {% include 'includes/dashboard_head.html' %}
     <!--   SIDEBAR   -->
     <ul class="list-group">
         <a class="list-group-item {% if '/accounts/' == request.path %}active{% endif %}" href="{% url 'dashboard' %}"> บัญชีของฉัน </a>
