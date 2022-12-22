@@ -232,8 +232,10 @@ def resetPassword(request):
 def my_orders(request):
     orders = Order.objects.filter(
         user=request.user, is_ordered=True).order_by('-created_at')
+    userprofile = UserProfile.objects.get(user_id=request.user.id)
     context = {
         'orders': orders,
+        'userprofile': userprofile,
     }
     return render(request, 'accounts/my_orders.html', context)
 
@@ -264,6 +266,7 @@ def edit_profile(request):
 
 @login_required(login_url='login')
 def change_password(request):
+    userprofile = get_object_or_404(UserProfile, user=request.user)
     if request.method == "POST":
         current_password = request.POST['current_password']
         new_password = request.POST['new_password']
@@ -285,7 +288,11 @@ def change_password(request):
         else:
             messages.error(request, 'รหัสยืนยันไม่ตรงกัน')
             return redirect('change_password')
-    return render(request, 'accounts/change_password.html')
+
+    context = {
+        'userprofile': userprofile,
+    }   
+    return render(request, 'accounts/change_password.html', context)
 
 
 @login_required(login_url='login')

@@ -8,7 +8,7 @@ class OrderProductInline(admin.TabularInline):
     extra = 0 # ปิด 3 แถวว่างสุดท้าย 
 
 class OrderAdmin(admin.ModelAdmin):
-    list_display = ['order_number', 'cust_name', 'payment', 'phone', 'city', 'order_total', 'tax', 'status', 'is_ordered', 'created_at']
+    list_display = ['order_number', 'user', 'cust_name', 'payment', 'phone', 'city', 'order_total', 'tax', 'status', 'is_ordered', 'created_at']
     list_filter = ['status', 'is_ordered']
     search__field = ['order_number', 'cust_name', 'phone', 'email']
     list_per_page = 20
