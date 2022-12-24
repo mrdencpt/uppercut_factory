@@ -70,8 +70,7 @@ def login(request):
         if user is not None:
             try:
                 cart = Cart.objects.get(cart_id=_cart_id(request))
-                is_cart_item_exists = CartItem.objects.filter(
-                    cart=cart).exists()
+                is_cart_item_exists = CartItem.objects.filter(cart=cart).exists()
                 if is_cart_item_exists:
                     cart_item = CartItem.objects.filter(cart=cart)
                     # Getting the product variations by cart id

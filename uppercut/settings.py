@@ -26,8 +26,8 @@ SECRET_KEY = config('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DEBUG', default=True, cast=bool) # True or False ไม่ใช่ string
 
-ALLOWED_HOSTS = ['uppercuttest.herokuapp.com']
-# ALLOWED_HOSTS = []
+# ALLOWED_HOSTS = ['uppercuttest.herokuapp.com']
+ALLOWED_HOSTS = []
 
 # Application definition
 
@@ -93,25 +93,25 @@ AUTH_USER_MODEL = 'accounts.Account'
 # ซ่อนค่า config ที่ .env ไฟล์
 
 # --- Database Local ----
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': config('DB_NAME'),
-#         'USER': config('DB_USER'),
-#         'PASSWORD': config('DB_PASSWORD'),
-#         'HOST': config('DB_HOST'),
-#     }
-# }
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': config('DB_NAME'),
+        'USER': config('DB_USER'),
+        'PASSWORD': config('DB_PASSWORD'),
+        'HOST': config('DB_HOST'),
+    }
+}
 
 # DATABASES = {'default': dj_database_url.config(default='postgres://user:pass@localhost/dbname')}
 # DATABASES = {'default': dj_database_url.config(default='postgres://postgres:123456@localhost/uppercut_db')}
 
 # --- Database Heroku --- 
-DB_NAME = config('DB_NAME')
-DB_USER = config('DB_USER')
-DB_PASS = config('DB_PASSWORD')
-DB_HOST = config('DB_HOST')
-DATABASES = {'default': dj_database_url.config(default='postgres://DB_USER:DB_PASS@DB_HOST/DB_NAME')}
+# DB_NAME = config('DB_NAME')
+# DB_USER = config('DB_USER')
+# DB_PASS = config('DB_PASSWORD')
+# DB_HOST = config('DB_HOST')
+# DATABASES = {'default': dj_database_url.config(default='postgres://DB_USER:DB_PASS@DB_HOST/DB_NAME')}
 
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
