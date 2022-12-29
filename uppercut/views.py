@@ -1,7 +1,9 @@
-from django.shortcuts import render
+from django.shortcuts import get_object_or_404, render
 from store.models import Product, ReviewRating
+# from accounts.models import UserProfile
 
 def home(request):
+    # userprofile = get_object_or_404(UserProfile, user=request.user)
     products = Product.objects.all().filter(is_available=True).order_by('created_date')
 
     # Get the reviews
@@ -10,6 +12,7 @@ def home(request):
 
     context = {
         'products': products,
+        # 'userprofile':userprofile
         # 'reviews': reviews,
     }
 

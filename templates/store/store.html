@@ -64,7 +64,8 @@
                                 <span class="price">{{ product.price }}</span>
                             </div>
                         <!-- </div> -->
-                        {% if product.stock <= 0 %}
+                        <!-- {% if product.stock <= 0 %} -->
+                        {% if numstock <= 0 %}
                             <a href="{{product.get_url}}"><h5 class="text-danger">สินค้าหมด</h5></a>
                         {% else %}
                             <a href="{{product.get_url}}" class="btn btn-block btn-secondary">รายละเอียด </a>
