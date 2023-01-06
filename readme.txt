@@ -128,3 +128,12 @@ heroku run bash -a uppercuttest เข้า
 cd .. ออกจากชั้น directory
 cd / ออกจาก directory ทั้งหมด
 exit ตอนจบ
+
+--- สร้าง พื้นที่จำลอง env ----
+- ใช้ Terminal ชื่อ Git Bash
+- python -m venv env  สร้างในโฟลเดอร์งาน จะได้ folder env + (include, Lib, Scripts) subข้างใน
+- source env/Scripts/activate คำสั่งเข้าใช้ env
+- pip freeze ต้องไม่มี โปรแกรมอะไร
+- clear ล้างหน้าจอ
+- deactivate คำสั่งออกจากพื้นที่จำลอง
+

@@ -1,7 +1,7 @@
 from django.shortcuts import get_object_or_404, redirect, render
 
 from category.models import Category
-from .models import Product, ProductGallery, ReviewRating, SizeColorStock
+from .models import Product, ProductGallery, ReviewRating
 from carts.models import CartItem
 from carts.views import _cart_id
 from django.core.paginator import EmptyPage, PageNotAnInteger, Paginator
@@ -14,7 +14,6 @@ from django.contrib.auth.decorators import login_required
 def store(request, category_slug=None):
     categories = None
     products = None
-    listsize = None
     if category_slug != None:
         categories = get_object_or_404(Category, slug=category_slug)
         products = Product.objects.filter(
